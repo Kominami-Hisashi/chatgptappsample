@@ -8,3 +8,4 @@ Ruby on Railsのテンプレートリポジトリ
 | Rails | 7.0.4.3 |
 | MySQL | 8.0.33  |
 
+# chatgptappsample
