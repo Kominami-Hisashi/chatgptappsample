@@ -1,7 +1,9 @@
-class ChatsController < ApplicationController
+class Adviser1Controller < ApplicationController
   before_action :set_token
 
-  def index; end
+  def index
+    @chats = Chat.where(adviser_type: "adviser1")
+end
 
   def search
     client = OpenAI::Client.new(
@@ -10,7 +12,7 @@ class ChatsController < ApplicationController
       request_timeout: 240
     )
     text = text_params()
-    initial_message = { role: "system", content: "you are Karl Marx. Provide insightful and constructive responses without outright negation to the queries." }
+    initial_message = { role: "system", content: "You are Karl Marx. Respond to queries without outright negation and provide insights in a manner characteristic of Marx's philosophy." }
     user_message = { role: "user", content: text }
     response = client.chat(
       parameters: {
@@ -20,10 +22,22 @@ class ChatsController < ApplicationController
       }
     )
 
+    bot_message = response.dig("choices", 0, "message", "content")
+
+    # Save the conversation to the database
+    Chat.create(user_message: text, bot_message: bot_message, adviser_type: "adviser1")
+
     puts response
 
     @chats = response.dig("choices", 0, "message", "content")
     puts @chats
+
+  end
+
+  def destroy
+    @chat = Chat.find(params[:id])
+    @chat.destroy
+    redirect_to index_adviser1_path, notice: 'Chat was successfully deleted.'
   end
 
   private

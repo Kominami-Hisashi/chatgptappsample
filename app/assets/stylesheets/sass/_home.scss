@@ -1,0 +1,44 @@
+.card-contents {
+  padding: 22px 32px;
+  display: block;
+  margin: 30px 0;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.user-items {
+  margin-top: 32px;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.user-items .item {
+  margin-bottom: 24px;
+  margin-right: 48px;
+  text-align: center;
+}
+
+.user-items .item img {
+  width: 150px;
+  height: 150px;
+  border-radius: 100px;
+}
+
+.user-items .item .username {
+  color: #818181;
+  margin: 10px auto;
+}
+
+.member{
+  font-size: 15px;
+  color: #fff;
+  background-color: #58c1bc;
+  border:none;
+  border-radius: 3px;
+  cursor: pointer;
+  width: 100px;
+  height: 20px;
+  margin: 10px auto;
+}

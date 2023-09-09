@@ -1,0 +1,21 @@
+<h3 class="philosophy-title">カールマルクスへの相談を入力してみましょう</h3>
+<div class="philosophy-form-container">
+  <%= form_with(url: search_adviser1_path, method: :get, class: "philosophy-form") do |form| %>
+    <%= form.text_field :text, size: 75, class: "philosophy-input" %>
+    <%= form.submit "回答", class: "philosophy-button" %>
+  <% end %>
+</div>
+
+<h1>Chat History</h1>
+
+<ul>
+  <% @chats.each do |chat| %>
+    <li>
+      <strong>質問者:</strong> <%= chat.user_message %><br>
+      <strong>マルクス:</strong> <%= chat.bot_message %>
+      <%= form_with(url: destroy_adviser1_path(chat), method: :delete, local: true) do %>
+      <%= submit_tag "Delete", data: { confirm: 'Are you sure?' } %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>

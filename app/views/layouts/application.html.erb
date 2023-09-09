@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Src</title>
+    <title>哲人相談</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <!-- Style追加 -->
+    <link rel="stylesheet" href="<%= mix('/css/app.css') %>">
+    <!-- Javascript追加 -->
+    <script src="<%= mix('/js/bootstrap.js') %>"></script>
   </head>
 
   <body>
     <%= yield %>
+    <!-- Javascript追加 -->
+    <script src="<%= mix('/js/app.js') %>"></script>
+
+
   </body>
 </html>
