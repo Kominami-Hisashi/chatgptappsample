@@ -1,3 +1,4 @@
+<%= image_tag 'Chuangzi.png', size: "300x300" %>
 <h3 class="philosophy-title">荘子への相談を入力してみましょう</h3>
 <div class="philosophy-form-container">
   <%= form_with(url: search_adviser2_path, method: :get, class: "philosophy-form") do |form| %>
@@ -20,3 +21,5 @@
     </li>
   <% end %>
 </ul>
+
+<%= link_to '哲人一覧に戻る', index_chats_path	%>
