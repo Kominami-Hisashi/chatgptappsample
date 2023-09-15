@@ -1,4 +1,5 @@
 # rails_template
+test2
 Ruby on Railsのテンプレートリポジトリ
 
 # Version
