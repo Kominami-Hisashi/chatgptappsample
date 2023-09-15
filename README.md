@@ -9,3 +9,4 @@ Ruby on Railsのテンプレートリポジトリ
 | MySQL | 8.0.33  |
 
 # chatgptappsample
+# testtest
