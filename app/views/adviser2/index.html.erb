@@ -13,7 +13,7 @@
 <ul>
   <% @chats.each do |chat| %>
     <li>
-      <strong>あなた:</strong> <%= chat.user_message %><br>
+      <strong>質問者:</strong> <%= chat.user_message %><br>
       <strong>荘子:</strong> <%= chat.bot_message %>
       <%= form_with(url: destroy_adviser2_path(chat), method: :delete, local: true) do %>
       <%= submit_tag "Delete", data: { confirm: 'Are you sure?' } %>

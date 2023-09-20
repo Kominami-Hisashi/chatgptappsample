@@ -26,4 +26,11 @@ get 'adviser3/',to: 'adviser3#index',as: 'index_adviser3'
 get 'adviser3/search', to: 'adviser3#search',as: 'search_adviser3'
 delete 'adviser3/destroy/:id', to: 'adviser3#destroy',as: 'destroy_adviser3'
 
+#adviser4
+get 'adviser4/',to: 'adviser4#index',as: 'index_adviser4'
+get 'adviser4/search', to: 'adviser4#search',as: 'search_adviser4'
+delete 'adviser4/destroy/:id', to: 'adviser4#destroy',as: 'destroy_adviser4'
+post '/adviser4/:id/follow_up', to: 'adviser4#follow_up', as: 'follow_up_adviser4'
+
+
 end
