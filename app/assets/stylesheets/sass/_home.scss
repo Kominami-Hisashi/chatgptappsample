@@ -41,4 +41,19 @@
   width: 100px;
   height: 20px;
   margin: 10px auto;
+  @include respond(phone) {
+    background-color: red;
+  }
+}
+
+.mobile_test{
+  height: 200px;
+  width: 200px;
+  border: 1px solid black;
+  @include respond(tab){
+    background-color: blue;
+  }
+  @include respond(phone) {
+    background-color: red;
+  }
 }
