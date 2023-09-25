@@ -1,10 +1,23 @@
 <%= image_tag 'Nietzsche.jpg', size: "300x300" %>
 <h3 class="philosophy-title">ニーチェへの相談を入力してみましょう</h3>
 <div class="philosophy-form-container">
-  <%= form_with(url: search_adviser6_path, method: :get, class: "philosophy-form") do |form| %>
+  <%= form_with(url: search_adviser5_path, method: :get, class: "philosophy-form") do |form| %>
     <%= form.text_field :text, size: 75, class: "philosophy-input" %>
     <%= form.submit "回答", id: "submit-button", class: "philosophy-button" %>
   <% end %>
+</div>
+
+<div id="quote-container" class="quote-container">
+<div class="quote-title">ニーチェ語録</div>
+  <div class="quote-slide">
+    <p class="quote-text">「強さは意志の問題である。」</p>
+  </div>
+  <div class="quote-slide">
+    <p class="quote-text">「なにものも永遠には存在せず。」</p>
+  </div>
+  <div class="quote-slide">
+    <p class="quote-text">「神は死んだ。」</p>
+  </div>
 </div>
 
 <h1>Chat History</h1>

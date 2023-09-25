@@ -1,61 +1,84 @@
+<div class="top">
+  <h2 class="top-title">哲会話(TetsuKaiwa)</h2>
+  <%= image_tag 'tetsukaiwa1.jpeg', size: "1027x664" %>
+  <div class="top-content">
+    <p class="content1">あなたのお悩みや疑問に歴史に名を残す哲人たちがお答えします。</p>
+    <p class="content2">哲会話はChatGPTを利用している相談アプリです。<br>
+      気になる哲人へ相談を入力してみましょう。</p>
+  </div>
+
+</div>
+
+<div class="mobile_test">Test</div>
+
+<div class="main">
+
+<h2 class="card-title">哲人一覧</h2>
+  <div class="card-contents">
 
 
-<div class="card-contents">
-  <h2 class="card-title">哲人一覧</h2>
-  <div class="mobile_test">Test</div>
-  <div class="user-items">
     <div class="item">
       <%= image_tag 'karl marx.png' %>
         <p class="username">カールマルクス</p>
-        <%= link_to '相談する', 'adviser1/' %>
+        <p class="profile">社会学、経済学、政治学の父。資本主義社会の批判者として「共産党宣言」や「資本論」を著し、社会主義・共産主義の基盤を築いた。</p>
+        <%= link_to '相談する', 'adviser1/', class: 'btn btn-primary' %>
     </div>
 
     <div class="item">
     <%= image_tag 'Chuangzi.png' %>
       <p class="username">荘子</p>
-      <%= link_to '相談する', 'adviser2/' %>
+      <p class="profile">古代中国の道家思想を代表する哲学者。自然との調和や無為自然の思想を重視し、数々の寓話でその哲学を伝えた。</p>
+      <%= link_to '相談する', 'adviser2/', class: 'btn btn-primary' %>
     </div>
 
     <div class="item">
     <%= image_tag 'archimedes.png' %>
       <p class="username">アリストテレス</p>
-      <%= link_to '相談する', 'adviser3/' %>
+      <p class="profile">古代ギリシャの哲学者。論理学、倫理学、生物学など幅広い分野での研究で知られ、西洋哲学の基盤を築いた。</p>
+      <%= link_to '相談する', 'adviser3/', class: 'btn btn-primary' %>
     </div>
 
     <div class="item">
       <%= image_tag 'adler.jpg' %>
       <p class="username">アドラー</p>
-      <%= link_to '相談する', 'adviser4/' %>
+      <p class="profile">個人心理学の創始者。劣等感の理論や目的論を提唱し、人間の成長と発展のプロセスを研究。心理療法の先駆者。</p>
+      <%= link_to '相談する', 'adviser4/', class: 'btn btn-primary' %>
     </div>
 
     <div class="item">
       <%= image_tag 'Nietzsche.jpg' %>
       <p class="username">ニーチェ</p>
-      <%= link_to '相談する', 'adviser5/' %>
+      <p class="profile">「超人」の哲学や「神は死んだ」との宣言で知られる。道徳、真実、価値の再評価を求め、哲学・文化への影響は計り知れない。</p>
+      <%= link_to '相談する', 'adviser5/', class: 'btn btn-primary' %>
     </div>
 
     <div class="item">
       <%= image_tag 'Buddha.jpg' %>
       <p class="username">ブッダ</p>
-      <%= link_to '相談する', 'adviser6/' %>
+      <p class="profile">インドの宗教家。四諦や八正道を説き、苦しみの原因とその解消方法を教えた。仏教の創始者として世界中に広まる。</p>
+      <%= link_to '相談する', 'adviser6/', class: 'btn btn-primary' %>
     </div>
 
     <div class="item">
       <%= image_tag 'Levi-Strauss.jpg' %>
       <p class="username">レヴィ=ストロース</p>
-      <%= link_to '相談する', 'adviser7/' %>
+      <p class="profile">文化人類学者。原始社会の神話やシンボルを分析し、人間の思考の普遍性を研究。構造主義の基礎を築いた。</p>
+      <%= link_to '相談する', 'adviser7/', class: 'btn btn-primary' %>
     </div>
 
     <div class="item">
       <%= image_tag 'Jacques Derrida.jpg' %>
       <p class="username">ジャック・デリダ</p>
-      <%= link_to '相談する', 'adviser8/' %>
+      <p class="profile">西洋哲学の伝統を問い直し、テキストの解釈を中心とした「脱構築」を提唱。現代思想に深く影響を与えた。</p>
+      <%= link_to '相談する', 'adviser8/', class: 'btn btn-primary' %>
     </div>
 
     <div class="item">
       <%= image_tag 'Kitaro_nishida.jpg' %>
       <p class="username">西田幾多郎</p>
-      <%= link_to '相談する', 'adviser9/' %>
+      <p class="profile">「絶対無」という概念で知られる日本の哲学者。西洋と東洋の哲学を融合させ、独自の「場所の哲学」を展開。</p>
+      <%= link_to '相談する', 'adviser9/', class: 'btn btn-primary' %>
     </div>
   </div>
+
 </div>
