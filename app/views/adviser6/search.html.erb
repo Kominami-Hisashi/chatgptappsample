@@ -1,3 +1,8 @@
-<h3>ブッダからの回答</h3>
-<p><%= @chats %></p>
-<%= link_to '入力ページに戻る', index_adviser6_path	%>
+<div class="answer-container">
+  <h3>ブッダからの回答</h3>
+  <%= image_tag 'buddha2.jpeg',size: "500x300", class: "answer-image" %>
+  <div class="answer-box">
+    <p class="answer-text"><%= @chats %></p>
+  </div>
+  <%= link_to '入力ページに戻る', index_adviser6_path %>
+</div>

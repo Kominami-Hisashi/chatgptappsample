@@ -3,8 +3,21 @@
 <div class="philosophy-form-container">
   <%= form_with(url: search_adviser6_path, method: :get, class: "philosophy-form") do |form| %>
     <%= form.text_field :text, size: 75, class: "philosophy-input" %>
-    <%= form.submit "回答", class: "philosophy-button" %>
+    <%= form.submit "回答", id: "submit-button", class: "philosophy-button" %>
   <% end %>
+</div>
+
+<div id="quote-container" class="quote-container">
+<div class="quote-title">ブッダ語録</div>
+  <div class="quote-slide">
+    <p class="quote-text">「心が平和であれば、幸せである。」</p>
+  </div>
+  <div class="quote-slide">
+    <p class="quote-text">「怒りは毒を飲むようなものだ。」</p>
+  </div>
+  <div class="quote-slide">
+    <p class="quote-text">「瞑想し、清らかに生きよ。」</p>
+  </div>
 </div>
 
 <h1>Chat History</h1>

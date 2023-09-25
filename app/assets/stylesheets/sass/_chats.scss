@@ -40,3 +40,38 @@
     }
   }
 }
+
+.answer-container {
+  text-align: center; /* 中央揃え */
+  margin: 0 auto; /* コンテナをページの中央に配置 */
+  width: 80%; /* コンテナの幅を設定（必要に応じて変更可能） */
+}
+
+.answer-box {
+  background-color: #f9f9f9; /* 背景色を設定 */
+  border: 2px solid #333; /* 枠線を設定 */
+  border-radius: 10px; /* 枠の角を丸くする */
+  padding: 20px; /* 内側の余白を設定 */
+  width: 80%; /* 枠の幅を広げる */
+  margin: 0 auto; /* 枠をページの中央に配置 */
+  display: flex; /* Flexboxを使用して中央揃えを実現 */
+  align-items: center; /* 垂直方向に中央揃え */
+  justify-content: center; /* 水平方向に中央揃え */
+  flex-direction: column; /* 子要素を縦方向に配置 */
+}
+
+.answer-text {
+  font-weight: bold; /* テキストを太字にする */
+  color: #333; /* テキスト色を設定 */
+  text-align: left; /* テキストを中央揃え */
+  margin: 0; /* マージンをリセット */
+  width: 100%; /* テキストの幅を最大にする */
+  background-color: #f9f9f9; /* 背景色を設定 */
+  padding: 20px; /* パディングを追加 */
+  border-radius: 8px; /* 角を丸くする */
+  margin-bottom: 20px; /* 画像の下にマージンを追加 */
+}
+
+.answer-image {
+  margin-bottom: 20px; /* 画像の下にマージンを追加 */
+}

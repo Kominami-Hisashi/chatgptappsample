@@ -3,8 +3,21 @@
 <div class="philosophy-form-container">
   <%= form_with(url: search_adviser7_path, method: :get, class: "philosophy-form") do |form| %>
     <%= form.text_field :text, size: 75, class: "philosophy-input" %>
-    <%= form.submit "回答", class: "philosophy-button" %>
+    <%= form.submit "回答", id: "submit-button", class: "philosophy-button" %>
   <% end %>
+</div>
+
+<div id="quote-container" class="quote-container">
+<div class="quote-title">レヴィ=ストロース語録</div>
+  <div class="quote-slide">
+    <p class="quote-text">「野蛮人は、文化的な人間だ。」</p>
+  </div>
+  <div class="quote-slide">
+    <p class="quote-text">「神話は生きた言語だ。」</p>
+  </div>
+  <div class="quote-slide">
+    <p class="quote-text">「真実は視覚で得られる。」</p>
+  </div>
 </div>
 
 <h1>Chat History</h1>

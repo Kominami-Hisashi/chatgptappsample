@@ -3,10 +3,22 @@
 <div class="philosophy-form-container">
   <%= form_with(url: search_adviser2_path, method: :get, class: "philosophy-form") do |form| %>
     <%= form.text_field :text, size: 75, class: "philosophy-input" %>
-    <%= form.submit "回答", class: "philosophy-button" %>
+    <%= form.submit "回答", id: "submit-button", class: "philosophy-button" %>
   <% end %>
 </div>
 
+<div id="quote-container" class="quote-container">
+<div class="quote-title">荘子語録</div>
+  <div class="quote-slide">
+    <p class="quote-text">「自由は心の中にある。」</p>
+  </div>
+  <div class="quote-slide">
+    <p class="quote-text">「幸福は自然と共にある。」</p>
+  </div>
+  <div class="quote-slide">
+    <p class="quote-text">「物事は常に変わる。」</p>
+  </div>
+</div>
 
 <h1>Chat History</h1>
 

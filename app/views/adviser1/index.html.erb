@@ -3,10 +3,23 @@
 <div class="philosophy-form-container">
   <%= form_with(url: search_adviser1_path, method: :get, class: "philosophy-form") do |form| %>
     <%= form.text_field :text, size: 75, class: "philosophy-input" %>
-    <%= form.submit "回答", class: "philosophy-button" %>
+    <%= form.submit "回答", id: "submit-button", class: "philosophy-button" %>
   <% end %>
 </div>
 
+
+<div id="quote-container" class="quote-container">
+<div class="quote-title">マルクス語録</div>
+  <div class="quote-slide">
+    <p class="quote-text">「歴史は人間の自己創造である。」</p>
+  </div>
+  <div class="quote-slide">
+    <p class="quote-text">「資本家は労働者の血を吸う。」</p>
+  </div>
+  <div class="quote-slide">
+    <p class="quote-text">「哲学者は世界を解釈する。目的はそれを変えることだ。」</p>
+  </div>
+</div>
 
 <h1>Chat History</h1>
 
