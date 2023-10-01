@@ -1,8 +1,13 @@
 <div class="answer-container">
-  <h3>西田幾多郎からの回答</h3>
+  <h3 class="your-question">あなたの相談</h3>
+  <div class="question-box">
+    <p class="question-text"><%= @user_message %></p>
+  </div>
+
+  <h3 class="answer-title">西田幾多郎からの回答</h3>
   <%= image_tag 'Nishida kitaro2.jpeg',size: "500x300", class: "answer-image" %>
   <div class="answer-box">
-    <p class="answer-text"><%= @chats %></p>
+    <p class="answer-text"><%= @chats.gsub('。', "。<br>").html_safe %></p>
   </div>
   <%= link_to '入力ページに戻る', index_adviser9_path %>
 </div>

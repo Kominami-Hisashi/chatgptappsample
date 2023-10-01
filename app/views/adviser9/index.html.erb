@@ -1,4 +1,6 @@
-<%= image_tag 'Kitaro_nishida.jpg', size: "300x300" %>
+<%= image_tag 'Kitaro_nishida.jpg', class: "philosophy-image" %>
+<p class="ex-profile">日本の哲学者西田幾多郎は、人間の自由と個人の尊重を中心とした倫理学を展開しました。彼の思想は、自己の尊重と他者への責任を強調し、日本の近代哲学の展開に影響を与えました。</p>
+<p class="expertise">得意分野: 倫理学、政治学、宗教学</p>
 <h3 class="philosophy-title">西田幾多郎への相談を入力してみましょう</h3>
 <div class="philosophy-form-container">
   <%= form_with(url: search_adviser9_path, method: :get, class: "philosophy-form") do |form| %>
@@ -20,18 +22,27 @@
   </div>
 </div>
 
-<h1>Chat History</h1>
+<div class="chat-history-container">
+  <h1>Chat History</h1>
 
-<ul>
-  <% @chats.each do |chat| %>
-    <li>
-      <strong>質問者:</strong> <%= chat.user_message %><br>
-      <strong>西田幾多郎:</strong> <%= chat.bot_message %>
-      <%= form_with(url: destroy_adviser9_path(chat), method: :delete, local: true) do %>
-      <%= submit_tag "Delete", data: { confirm: 'Are you sure?' } %>
-      <% end %>
-    </li>
-  <% end %>
-</ul>
+  <ul>
+    <% @chats.each do |chat| %>
+      <li class="chat-item">
+        <div>
+          <span class="chat-label">質問者:</span>
+          <span class="chat-message"><%= chat.user_message %></span>
+        </div>
+        <div>
+          <span class="chat-label">西田幾多郎:</span>
+          <span class="chat-message"><%= chat.bot_message.present? ? chat.bot_message.gsub('。', "。<br>").html_safe : '' %></span>
+
+        </div>
+        <%= form_with(url: destroy_adviser9_path(chat), method: :delete, local: true) do %>
+        <%= submit_tag "Delete", data: { confirm: 'Are you sure?' } %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+  </div>
 
 <%= link_to '哲人一覧に戻る', index_chats_path	%>

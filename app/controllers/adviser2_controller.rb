@@ -12,6 +12,7 @@ class Adviser2Controller < ApplicationController
       request_timeout: 240
     )
     text = text_params()
+    @user_message = text
     initial_message = { role: "system", content: "you are Zhuangzi (荘子). Respond to queries without outright negation and provide insights in a manner characteristic of Zhuangzi's philosophy." }
     user_message = { role: "user", content: text }
     response = client.chat(

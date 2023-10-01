@@ -19,7 +19,7 @@ body {
   width: 100vw;
   height: 100vh;
   transition: all 0.5s;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(216, 210, 216, 0.3);
   position: fixed;
   top: 0;
   left: 0;
@@ -34,11 +34,24 @@ body {
   transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
-  background-color: #ffffff;
-  border-radius: 100%;
-  animation: sk-scaleout 1.0s infinite ease-in-out;
+  background-color: #fafafa;  // 背景色を変更
+  border-radius: 50%;
+  animation: new-animation 1.0s infinite linear;
+  //background-color: #ffffff;
+  //border-radius: 100%;
+  //animation: sk-scaleout 1.0s infinite ease-in-out;
 }
-/* Loading Animation */
+
+@keyframes new-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* Loading Animation
+
 @keyframes sk-scaleout {
   0% {
     transform: scale(0);
@@ -46,7 +59,7 @@ body {
     transform: scale(1.0);
     opacity: 0;
   }
-}
+} */
 
 /* Hide Loading Block */
 .loaded {
