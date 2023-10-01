@@ -1,9 +1,11 @@
-<%= image_tag 'Levi-Strauss.jpg', size: "300x300" %>
+<%= image_tag 'Jacques Derrida.jpg', class: "philosophy-image" %>
+<p class="ex-profile">デリダはポスト構造主義と解釈学の主要な思想家であり、テクストと言語の不確定性を強調しました。<br>彼の著作は、言葉やテクストに固定された意味は存在せず、解釈は無限に可能であると提唱しました。</p>
+<p class="expertise">得意分野: 哲学、文学理論、法学</p>
 <h3 class="philosophy-title">ジャックデリダへの相談を入力してみましょう</h3>
 <div class="philosophy-form-container">
   <%= form_with(url: search_adviser8_path, method: :get, class: "philosophy-form") do |form| %>
     <%= form.text_field :text, size: 75, class: "philosophy-input" %>
-    <%= form.submit "回答", id: "submit-button", class: "philosophy-button" %>
+    <%= form.submit "相談", id: "submit-button", class: "philosophy-button" %>
   <% end %>
 </div>
 
@@ -20,18 +22,27 @@
   </div>
 </div>
 
-<h1>Chat History</h1>
+<div class="chat-history-container">
+  <h1>Chat History</h1>
 
-<ul>
-  <% @chats.each do |chat| %>
-    <li>
-      <strong>質問者:</strong> <%= chat.user_message %><br>
-      <strong>ジャックデリダ:</strong> <%= chat.bot_message %>
-      <%= form_with(url: destroy_adviser8_path(chat), method: :delete, local: true) do %>
-      <%= submit_tag "Delete", data: { confirm: 'Are you sure?' } %>
-      <% end %>
-    </li>
-  <% end %>
-</ul>
+  <ul>
+    <% @chats.each do |chat| %>
+      <li class="chat-item">
+        <div>
+          <span class="chat-label">質問者:</span>
+          <span class="chat-message"><%= chat.user_message %></span>
+        </div>
+        <div>
+          <span class="chat-label">ジャックデリダ:</span>
+          <span class="chat-message"><%= chat.bot_message.present? ? chat.bot_message.gsub('。', "。<br>").html_safe : '' %></span>
+
+        </div>
+        <%= form_with(url: destroy_adviser8_path(chat), method: :delete, local: true) do %>
+        <%= submit_tag "Delete", data: { confirm: 'Are you sure?' } %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+  </div>
 
 <%= link_to '哲人一覧に戻る', index_chats_path	%>

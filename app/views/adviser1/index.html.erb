@@ -1,9 +1,11 @@
-<%= image_tag 'karl marx.png', size: "300x300" %>
+<%= image_tag 'karl marx.png', class: "philosophy-image" %>
+<p class="ex-profile">19世紀のドイツの思想家、経済学者であり、政治家でもあるカール・マルクスは、資本主義社会の構造と動力を解明し、共産主義の思想的基盤を築きました。<br>マルクスは、資本主義が生む矛盾を明らかにし、労働者の解放を訴えました。</p>
+<p class="expertise">得意分野: 社会学、政治学、経済学</p>
 <h3 class="philosophy-title">カールマルクスへの相談を入力してみましょう</h3>
 <div class="philosophy-form-container">
   <%= form_with(url: search_adviser1_path, method: :get, class: "philosophy-form") do |form| %>
-    <%= form.text_field :text, size: 75, class: "philosophy-input" %>
-    <%= form.submit "回答", id: "submit-button", class: "philosophy-button" %>
+    <%= form.text_field :text, size: 75, class: "philosophy-input", required: true %>
+    <%= form.submit "相談", id: "submit-button", class: "philosophy-button" %>
   <% end %>
 </div>
 
@@ -21,18 +23,27 @@
   </div>
 </div>
 
-<h1>Chat History</h1>
+<div class="chat-history-container">
+  <h1>Chat History</h1>
 
-<ul>
-  <% @chats.each do |chat| %>
-    <li>
-      <strong>質問者:</strong> <%= chat.user_message %><br>
-      <strong>マルクス:</strong> <%= chat.bot_message %>
-      <%= form_with(url: destroy_adviser1_path(chat), method: :delete, local: true) do %>
-      <%= submit_tag "Delete", data: { confirm: 'Are you sure?' } %>
-      <% end %>
-    </li>
-  <% end %>
-</ul>
+  <ul>
+    <% @chats.each do |chat| %>
+      <li class="chat-item">
+        <div>
+          <span class="chat-label">質問者:</span>
+          <span class="chat-message"><%= chat.user_message %></span>
+        </div>
+        <div>
+          <span class="chat-label">マルクス:</span>
+          <span class="chat-message"><%= chat.bot_message.present? ? chat.bot_message.gsub('。', "。<br>").html_safe : '' %></span>
+
+        </div>
+        <%= form_with(url: destroy_adviser1_path(chat), method: :delete, local: true) do %>
+        <%= submit_tag "Delete", data: { confirm: 'Are you sure?' } %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+  </div>
 
 <%= link_to '哲人一覧に戻る', index_chats_path	%>

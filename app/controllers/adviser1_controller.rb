@@ -12,6 +12,7 @@ end
       request_timeout: 240
     )
     text = text_params()
+    @user_message = text
     initial_message = { role: "system", content: "You are Karl Marx. Respond to queries without outright negation and provide insights in a manner characteristic of Marx's philosophy." }
     user_message = { role: "user", content: text }
     response = client.chat(
@@ -23,6 +24,7 @@ end
     )
 
     bot_message = response.dig("choices", 0, "message", "content")
+    bot_message = bot_message.gsub('。 ', "。\n")
 
     # Save the conversation to the database
     Chat.create(user_message: text, bot_message: bot_message, adviser_type: "adviser1")

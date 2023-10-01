@@ -5,7 +5,6 @@ class Adviser5Controller < ApplicationController
     @chats = Chat.where(adviser_type: "adviser5")
   end
 
-
   def search
     client = OpenAI::Client.new(
       access_token: ENV['API_KEY'],
@@ -13,6 +12,7 @@ class Adviser5Controller < ApplicationController
       request_timeout: 240
     )
     text = text_params()
+    @user_message = text
     initial_message = { role: "system", content: "You are Nietzsche. Respond to queries without outright negation and provide insights in a manner characteristic of Nietzsche's philosophy." }
     user_message = { role: "user", content: text }
     response = client.chat(
@@ -24,6 +24,7 @@ class Adviser5Controller < ApplicationController
     )
 
     bot_message = response.dig("choices", 0, "message", "content")
+    bot_message = bot_message.gsub('。 ', "。\n")
 
     # Save the conversation to the database with adviser_type
     Chat.create(user_message: text, bot_message: bot_message, adviser_type: "adviser5")

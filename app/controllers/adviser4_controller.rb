@@ -3,7 +3,6 @@ class Adviser4Controller < ApplicationController
 
   def  index
     @chats = Chat.where(adviser_type: "adviser4")
-    @chat = Chat.last
   end
   # app/controllers/adviser4_controller.rb
 
@@ -14,6 +13,7 @@ class Adviser4Controller < ApplicationController
       request_timeout: 240
     )
     text = text_params()
+    @user_message = text
     initial_message = { role: "system", content: "You are Alfred Adler. Respond to queries without outright negation and provide insights in a manner characteristic of Alfred Adler's philosophy." }
     user_message = { role: "user", content: text }
     response = client.chat(
@@ -29,11 +29,10 @@ bot_message = response.dig("choices", 0, "message", "content")
     # Save the conversation to the database with adviser_type
     Chat.create(user_message: text, bot_message: bot_message, adviser_type: "adviser4")
 
-    #puts response
+    puts response
 
-    #@chats = response.dig("choices", 0, "message", "content")
-    #puts @chats
-    redirect_to index_adviser4_path
+    @chats = response.dig("choices", 0, "message", "content")
+    puts @chats
 
   end
 

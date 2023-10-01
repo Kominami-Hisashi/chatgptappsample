@@ -1,8 +1,15 @@
 <div class="answer-container">
-  <h3>ニーチェからの回答</h3>
+  <h3 class="your-question">あなたの質問</h3>
+  <div class="question-box">
+    <p class="question-text"><%= @user_message %></p>
+  </div>
+
+  <h3 class="answer-title">ニーチェからの回答</h3>
   <%= image_tag 'Nietzsche3.jpeg',size: "500x300", class: "answer-image" %>
   <div class="answer-box">
-    <p class="answer-text"><%= @chats %></p>
+    <p class="answer-text"><%= @chats.gsub('。', "。<br>").html_safe %></p>
   </div>
   <%= link_to '入力ページに戻る', index_adviser5_path %>
 </div>
+
+<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
