@@ -25,32 +25,56 @@ body {
   left: 0;
   z-index: 9999;
 }
+
+/*.hidden {
+  display: none;
+}
+
+#loading-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3);
+  z-index: 9999;
+}
+
 .spinner {
-  width: 2000px;
-  height: 2000px;
+  width: 50px;
+  height: 50px;
+  background-color: #3498db;
+  animation: fadeInOut 1s infinite;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  background-color: #fafafa;  // 背景色を変更
-  border-radius: 50%;
-  animation: new-animation 1.0s infinite linear;
-  //background-color: #ffffff;
-  //border-radius: 100%;
-  //animation: sk-scaleout 1.0s infinite ease-in-out;
 }
 
-@keyframes new-animation {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+.text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  font-size: 20px;
+  color: #ffffff;
+  animation: textBlink 2s infinite;
 }
-/* Loading Animation
+
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes textBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+*/
+
+
+/*Loading Animation*/
 
 @keyframes sk-scaleout {
   0% {
@@ -59,7 +83,7 @@ body {
     transform: scale(1.0);
     opacity: 0;
   }
-} */
+}
 
 /* Hide Loading Block */
 .loaded {
