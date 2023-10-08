@@ -55,7 +55,6 @@ gem 'dotenv-rails'
 
 gem "ruby-openai"
 
-gem 'dotenv-rails'
 
 gem 'sassc-rails'
 
@@ -83,3 +82,11 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem "dockerfile-rails", ">= 1.5", :group => :development
+
+gem "redis", "~> 5.0"
+
+gem "sentry-ruby", "~> 5.11"
+
+gem "sentry-rails", "~> 5.11"
