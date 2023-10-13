@@ -26,6 +26,7 @@
     "typescript": "^5.0.4"
   },
   "devDependencies": {
-    "resolve-url-loader": "^5.0.0"
+    "resolve-url-loader": "^5.0.0",
+    "webpack-cli": "^5.1.4"
   }
 }
