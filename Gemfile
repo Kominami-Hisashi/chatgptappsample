@@ -55,7 +55,6 @@ gem 'dotenv-rails'
 
 gem "ruby-openai"
 
-gem 'dotenv-rails'
 
 gem 'sassc-rails'
 
