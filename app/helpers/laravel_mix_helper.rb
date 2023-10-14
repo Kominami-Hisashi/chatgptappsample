@@ -1,4 +1,4 @@
-module LaravelMixHelper
+ module LaravelMixHelper
   class LaravelMixError < StandardError; end
   MANIFEST_FILE = 'public/mix-manifest.json'
 
@@ -11,3 +11,4 @@ module LaravelMixHelper
     asset_path(manifest.fetch(path) { raise LaravelMixError, "No asset found for #{path} in the Mix manifest." })
   end
 end
+#
