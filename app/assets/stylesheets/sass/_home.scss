@@ -143,15 +143,3 @@
   border-radius: 5px;
   background: #5476EE;
 }
-
-.mobile_test{
-  height: 200px;
-  width: 200px;
-  border: 1px solid black;
-  @include respond(tab){
-    background-color: blue;
-  }
-  @include respond(phone) {
-    background-color: red;
-  }
-}
