@@ -4,7 +4,7 @@
     <p class="question-text"><%= @user_message %></p>
   </div>
 
-  <h3 class="answer-title">マルクスからの回答</h3>
+  <h3 class="answer-title">荘子からの回答</h3>
   <%= image_tag 'Chuangzi2.jpeg',size: "500x300", class: "answer-image" %>
   <div class="answer-box">
     <p class="answer-text"><%= @chats.gsub('。', "。<br>").html_safe %></p>
